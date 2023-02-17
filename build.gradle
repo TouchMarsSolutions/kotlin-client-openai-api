@@ -1,11 +1,6 @@
 group 'org.openapitools'
 version '1.0.0'
 
-wrapper {
-    gradleVersion = '8.0'
-    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
-}
-
 buildscript {
     ext.kotlin_version = '1.8.10'
 
@@ -27,7 +22,12 @@ java {
 }
 
 repositories {
-    maven { url "https://repo1.maven.org/maven2" }
+    mavenLocal()
+    mavenCentral()
+}
+
+jar {
+    enabled = true
 }
 
 test {
